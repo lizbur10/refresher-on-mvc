@@ -51,7 +51,7 @@ application:
 Now that we have identified the core components, let's examine what they
 actually do when a user engages with our web application:
 
-1. A user, through interaction with the `view`, (in this case, the browser's GUI), requests data (clicks on a link, submits a form, enters a URL in the browser's bar
+1. A user, through interaction with the `view`, (in this case, the browser's GUI), requests data (clicks on a link, submits a form, enters a URL in the browser's bar)
 2. The request is sent across the internet to the server
 3. The `controller` (_which does not change data itself!_) asks the `model` to either provide it data (which it will send) or to change model-held data depending on the user's request
 4. The `model` accesses/manipulates the actual 1's and 0's held on the server's database and returns the desired result to the `controller`
@@ -78,7 +78,7 @@ bank only has to build a new `view`, that is, an iPhone application.
 Oh my goodness! Amazon invents a new home device that talks to you! Again, the
 bank only needs to write a new `view` (or "interface") that can leverage the
 pre-existing architecture of the bank's `controller` and `model`, so long as it
-can send information across the iternet.
+can send information across the internet.
 
 Remember, we said that _software architects_ focus  on making design decisions
 which allow for ease of change, extensibility and avoidance of bugs.  For every
@@ -91,9 +91,9 @@ account data while you view and manipulate it with 21st century technology.
 
 ##### MVC is designed to:
 
-* Be language- and application- agnostic
+* Be language- and application-agnostic
 * Be modular: every part is distinct, encapsulated, and can be replaced without breaking the rest of the application
-* Use a ```controller``` to facilitate communication between the ```view```, (which the user interfaces with), and the ```model```
+* Use a ```controller``` to facilitate communication between the ```view```, which the user interfaces with, and the ```model```
 * Stores 'truth', the _actual data_, in the ```model```, which is far abstracted and independent from its representation in the ```view```
 
 ## Where Rails Fits In
@@ -104,7 +104,7 @@ Rails takes architectural guidance on how to separate concerns from the MVC patt
 
 The ```controller``` and ```model``` implementations in Rails are straightforward to align with our understanding of MVC.
 
-Not only are they named helpfully and live in helpfully-named directories like `models/` and `controllers/`,  but they encapsulate their responsibilities as perscribed in the MVC architecture. The controller actions mediate requests and delegate lookups by calling methods on models. As expected, models work with the low-level persistent storage subsystems (e.g. databases) to UPDATE, SELECT, and DELETE data in the database. The Rails views are templates for displaying data. They are automatically turned into HTML that is sent over the internet by Rails. However, the data they need to "complete" themselves is provided by a Rails controller. Rails "automagically" shares any variable prefixed with `@` in a controller action with the view.
+Not only are they named helpfully and live in helpfully-named directories like `models/` and `controllers/`,  but they encapsulate their responsibilities as prescribed in the MVC architecture. The controller actions mediate requests and delegate lookups by calling methods on models. As expected, models work with the low-level persistent storage subsystems (e.g. databases) to UPDATE, SELECT, and DELETE data in the database. The Rails views are templates for displaying data. They are automatically turned into HTML that is sent over the internet by Rails. However, the data they need to "complete" themselves is provided by a Rails controller. Rails "automagically" shares any variable prefixed with `@` in a controller action with the view.
 
 *ASIDE*: Some feel that this "automagic" is "bad." DHH feels that this "automagic" is "good." Reasonable programmers can disagree over the advantages and disadvantages of this choice. However, since DHH created Rails and runs the project, his opinion is the one implemented.
 
